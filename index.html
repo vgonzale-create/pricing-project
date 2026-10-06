@@ -160,7 +160,7 @@
 
     .steps { counter-reset: step; }
 
-    .step { position: relative; padding-top: 68px; }
+    .step { position: relative; padding: 68px 24px 24px; }
 
     .step::before {
       position: absolute;
@@ -197,24 +197,27 @@
 
     footer p { margin: 0; }
 
-    @media (max-width: 720px) {
-      .wrap { width: min(100% - 32px, 1100px); }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+
+    @media (max-width: 600px) {
+      html, body { max-width: 100%; overflow-x: clip; }
+      .wrap { width: min(100% - 28px, 1100px); }
       .header-inner { align-items: flex-start; flex-direction: column; gap: 4px; padding: 14px 0 10px; }
       nav { width: 100%; justify-content: flex-start; gap: 0; }
-      nav a { padding-inline: 10px; }
+      nav a { min-height: 44px; padding-inline: 8px; font-size: 1rem; }
       .hero { padding: 68px 0 72px; }
       section.content-section { padding: 58px 0; }
       .cards { grid-template-columns: 1fr; gap: 12px; }
-      .card { padding: 22px; }
-    }
-
-    @media (max-width: 390px) {
-      .wrap { width: min(100% - 28px, 1100px); }
-      nav a { padding-inline: 8px; font-size: 0.9rem; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
+      .card:not(.step) { padding: 22px; }
+      .eyebrow, footer { font-size: 0.875rem; }
+      .button, input, #pricing .pricing-card .button { min-height: 44px; }
+      #pricing .pricing-cards { grid-template-columns: 1fr; }
+      #pricing .pricing-unit { font-size: 1rem; }
+      #pricing .pricing-best, #pricing .pricing-list li { font-size: 1rem; }
+      #pricing .pricing-best strong, #pricing .pricing-list .pricing-muted,
+      #pricing .good-to-know p { font-size: 0.875rem; }
     }
   </style>
 </head>
@@ -306,8 +309,6 @@
           #pricing .good-to-know { margin-top: 18px; padding: 18px 20px; border: 1px solid var(--line); border-radius: 8px; background: #fbfcfa; }
           #pricing .good-to-know h3 { margin: 0 0 8px; color: var(--green); font-size: 1.05rem; }
           #pricing .good-to-know p { margin: 3px 0; color: var(--muted); font-size: 0.875rem; line-height: 1.5; }
-          @media (max-width: 900px) { #pricing .pricing-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-          @media (max-width: 600px) { #pricing .pricing-cards { grid-template-columns: 1fr; } }
         </style>
         <p class="pricing-value">The most complete map of marked Croatian trails, plus huts and storm alerts, for about €5 more a year than AlpMap Premium.</p>
         <div class="pricing-cards">
