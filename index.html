@@ -287,7 +287,91 @@
     <section class="content-section" id="pricing">
       <div class="wrap">
         <h2 class="section-heading">Pricing</h2>
-        <!-- PRICING -->
+        <style>
+          #pricing .pricing-value { max-width: 760px; margin: 0 0 28px; color: var(--muted); }
+          #pricing .pricing-cards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; align-items: stretch; }
+          #pricing .pricing-card { display: flex; min-width: 0; flex-direction: column; padding: 24px; border: 1px solid var(--line); border-radius: 8px; background: #fff; }
+          #pricing .pricing-card h3 { margin: 0 0 18px; color: var(--green); font-size: 1.25rem; }
+          #pricing .pricing-price { margin: 0; color: var(--ink); font-size: 2rem; font-weight: 750; line-height: 1.15; }
+          #pricing .pricing-unit { display: block; min-height: 48px; margin: 5px 0 18px; color: var(--muted); font-size: 0.95rem; line-height: 1.4; }
+          #pricing .pricing-best { margin: 0 0 16px; color: var(--ink); line-height: 1.45; }
+          #pricing .pricing-best strong { display: block; margin-bottom: 2px; color: var(--muted); font-size: 0.875rem; }
+          #pricing .pricing-list { display: grid; gap: 10px; margin: 0 0 24px; padding: 0; list-style: none; }
+          #pricing .pricing-list li { position: relative; padding-left: 24px; color: var(--ink); line-height: 1.45; }
+          #pricing .pricing-list li::before { position: absolute; left: 0; color: var(--green); content: "✓"; font-weight: 800; }
+          #pricing .pricing-list .pricing-muted { color: var(--muted); font-size: 0.875rem; }
+          #pricing .pricing-card .button { width: 100%; min-height: 44px; margin-top: auto; padding: 0 10px; text-align: center; }
+          #pricing .pricing-card-featured { position: relative; border: 2px solid var(--green); background: #f3f7f2; }
+          #pricing .pricing-badge { position: absolute; top: -13px; left: 50%; padding: 3px 12px; transform: translateX(-50%); border-radius: 999px; background: var(--green); color: #fff; font-size: 0.875rem; font-weight: 700; line-height: 1.4; white-space: nowrap; }
+          #pricing .good-to-know { margin-top: 18px; padding: 18px 20px; border: 1px solid var(--line); border-radius: 8px; background: #fbfcfa; }
+          #pricing .good-to-know h3 { margin: 0 0 8px; color: var(--green); font-size: 1.05rem; }
+          #pricing .good-to-know p { margin: 3px 0; color: var(--muted); font-size: 0.875rem; line-height: 1.5; }
+          @media (max-width: 900px) { #pricing .pricing-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+          @media (max-width: 600px) { #pricing .pricing-cards { grid-template-columns: 1fr; } }
+        </style>
+        <p class="pricing-value">The most complete map of marked Croatian trails, plus huts and storm alerts, for about €5 more a year than AlpMap Premium.</p>
+        <div class="pricing-cards">
+          <article class="pricing-card">
+            <h3>Free</h3>
+            <p class="pricing-price">€0</p>
+            <p class="pricing-unit">free of charge</p>
+            <p class="pricing-best"><strong>Best for:</strong>For everyone</p>
+            <ul class="pricing-list">
+              <li>Basic maps</li>
+              <li>SOS (free for everyone)</li>
+              <li>Location sharing (free for everyone)</li>
+              <li>In partnership with the mountain rescue service</li>
+              <li class="pricing-muted">Offline maps need a paid plan.</li>
+            </ul>
+            <a class="button" href="#contact">Choose Free</a>
+          </article>
+          <article class="pricing-card">
+            <h3>Region Pass</h3>
+            <p class="pricing-price">€4.99</p>
+            <p class="pricing-unit">per region, per year</p>
+            <p class="pricing-best"><strong>Best for:</strong>Occasional hikers and tourists</p>
+            <ul class="pricing-list">
+              <li>Offline maps of one region</li>
+              <li>Up to 3 regions per user a year</li>
+            </ul>
+            <a class="button" href="#contact">Choose Region Pass</a>
+          </article>
+          <article class="pricing-card pricing-card-featured">
+            <span class="pricing-badge">Recommended</span>
+            <h3>Explorer</h3>
+            <p class="pricing-price">€39.99</p>
+            <p class="pricing-unit">per user, per year</p>
+            <p class="pricing-best"><strong>Best for:</strong>Regular hikers and trail runners</p>
+            <ul class="pricing-list">
+              <li>Offline maps of all regions in Croatia, Slovenia and Bosnia and Herzegovina</li>
+              <li>Route planning</li>
+              <li>GPX export</li>
+              <li>Mountain huts</li>
+              <li>Wildfire and storm alerts</li>
+            </ul>
+            <a class="button" href="#contact">Choose Explorer</a>
+          </article>
+          <article class="pricing-card">
+            <h3>Group Leader</h3>
+            <p class="pricing-price">€89</p>
+            <p class="pricing-unit">per group leader, per year</p>
+            <p class="pricing-best"><strong>Best for:</strong>Club and group leaders</p>
+            <ul class="pricing-list">
+              <li>Everything in Explorer</li>
+              <li>Live group tracking for up to 15 people</li>
+              <li>Group members use the app for free</li>
+            </ul>
+            <a class="button" href="#contact">Choose Group Leader</a>
+          </article>
+        </div>
+        <aside class="good-to-know">
+          <h3>Good to know</h3>
+          <p>Region Pass covers one region, up to 3 regions per user a year.</p>
+          <p>If you upgrade to Explorer, we credit the price you paid for Region Passes.</p>
+          <p>Only the group leader pays.</p>
+          <p>No discounts.</p>
+          <p>All prices are final consumer prices (VAT included) and are billed per year through the app store.</p>
+        </aside>
       </div>
     </section>
 
