@@ -186,14 +186,19 @@
     .faq-item p { margin: 0; color: var(--muted); }
 
     #contact { padding: 48px 0; background: var(--soft); }
-    #contact .section-heading { margin-bottom: 18px; text-align: center; }
-    #contact .contact-card { max-width: 560px; margin: 0 auto; padding: 28px; border: 1px solid var(--line); border-radius: 14px; background: #fff; box-shadow: 0 10px 28px rgb(31 42 36 / 7%); text-align: center; }
-    #contact .contact-location { margin: 0 0 18px; color: var(--ink); font-weight: 700; }
-    #contact .contact-methods { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
-    #contact .contact-method { display: grid; align-content: start; justify-items: center; gap: 8px; margin: 0; color: var(--muted); }
-    #contact .contact-button { display: inline-flex; width: 100%; max-width: 100%; min-height: 44px; align-items: center; justify-content: center; padding: 8px 12px; border-radius: 8px; background: var(--green); color: #fff; font-weight: 700; overflow-wrap: anywhere; text-decoration: none; }
-    #contact .contact-button:hover, #contact .contact-button:focus-visible { background: #124817; }
-    #contact .contact-note { margin: 18px 0 0; color: var(--muted); font-size: 0.875rem; }
+    #contact .section-heading { margin-bottom: 6px; text-align: center; }
+    #contact .contact-subtitle { margin: 0 0 22px; color: var(--muted); text-align: center; }
+    #contact .contact-card { max-width: 560px; margin: 0 auto; padding: 8px 24px; border: 1px solid var(--line); border-radius: 16px; background: #fff; box-shadow: 0 4px 18px rgb(31 42 36 / 4%); }
+    #contact .contact-method { display: grid; grid-template-columns: 32px minmax(0, 1fr); align-items: center; gap: 14px; padding: 16px 0; }
+    #contact .contact-method + .contact-method { border-top: 1px solid var(--line); }
+    #contact .contact-icon { display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 9px; background: var(--soft); color: var(--green); }
+    #contact .contact-icon svg { width: 18px; height: 18px; }
+    #contact .contact-label { margin: 0 0 2px; color: var(--ink); font-size: 0.875rem; font-weight: 600; }
+    #contact .contact-link { display: inline-block; max-width: 100%; color: var(--green); font-size: 0.9375rem; white-space: nowrap; text-decoration: none; text-underline-offset: 4px; }
+    #contact .contact-link:hover { text-decoration: underline; }
+    #contact .contact-link:focus-visible { outline: 2px solid var(--green); outline-offset: 4px; border-radius: 2px; text-decoration: underline; }
+    #contact .contact-location { margin: 16px 0 2px; color: var(--muted); font-size: 0.875rem; text-align: center; }
+    #contact .contact-note { margin: 0; color: var(--muted); font-size: 0.8125rem; text-align: center; }
 
     footer {
       padding: 22px 16px;
@@ -226,8 +231,10 @@
       #pricing .pricing-best, #pricing .pricing-list li { font-size: 1rem; }
       #pricing .pricing-best strong, #pricing .pricing-list .pricing-muted,
       #pricing .good-to-know p { font-size: 0.875rem; }
-      #contact .contact-card { padding: 22px 18px; }
-      #contact .contact-methods { grid-template-columns: 1fr; }
+      #contact .contact-card { padding: 6px 14px; }
+      #contact .contact-method { grid-template-columns: 24px minmax(0, 1fr); gap: 10px; padding: 14px 0; }
+      #contact .contact-icon { width: 24px; height: 28px; }
+      #contact .contact-link { font-size: 0.8125rem; }
     }
   </style>
 </head>
@@ -419,14 +426,25 @@
     <section class="content-section" id="contact">
       <div class="wrap">
         <h2 class="section-heading">Contact</h2>
+        <p class="contact-subtitle">We'd love to hear from you.</p>
         <div class="contact-card">
-          <p class="contact-location">Ridgeway Maps, Split, Croatia</p>
-          <div class="contact-methods">
-            <p class="contact-method"><span>General questions:</span><a class="contact-button" href="mailto:hello@ridgewaymaps.example">hello@ridgewaymaps.example</a></p>
-            <p class="contact-method"><span>Clubs and group leaders:</span><a class="contact-button" href="mailto:groups@ridgewaymaps.example">groups@ridgewaymaps.example</a></p>
+          <div class="contact-method">
+            <span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg></span>
+            <div>
+              <p class="contact-label">General enquiries</p>
+              <a class="contact-link" href="mailto:hello@ridgewaymaps.example">hello@ridgewaymaps.example</a>
+            </div>
           </div>
-          <p class="contact-note">These contact details are fictitious.</p>
+          <div class="contact-method">
+            <span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20v-2a6 6 0 0 1 12 0v2M16 5a3 3 0 0 1 0 6M21 20v-2a6 6 0 0 0-4-5.65"/></svg></span>
+            <div>
+              <p class="contact-label">Clubs &amp; group leaders</p>
+              <a class="contact-link" href="mailto:groups@ridgewaymaps.example">groups@ridgewaymaps.example</a>
+            </div>
+          </div>
         </div>
+        <p class="contact-location">Split, Croatia</p>
+        <p class="contact-note">Fictitious contact details for this academic project</p>
       </div>
     </section>
   </main>
